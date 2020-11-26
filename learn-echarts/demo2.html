@@ -7,10 +7,49 @@
   <script src="./js/echarts.min.js"></script>
 </head>
 <body>
-  <div id="main" style="width: 600px; height: 600px;"></div>
+  <div id="main" style="width: 600px; height: 600px; background-color: grey;"></div>
 
   <script>
-    
+    const myChart = echarts.init(document.getElementById('main'));
+
+    let option = {
+      title: {
+        text: 'ECharts 入门示例'
+      },
+      grid: {   //设置直角坐标系的底板
+        left: 100,
+        right: '20%',
+        bottom: 50,
+      },
+      xAxis: {
+        data: [
+          'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'
+        ]
+      },
+      yAxis: {},
+      series: [
+        {
+          type: 'pie',  //饼图
+          center: ['65%', 60],  //中心点坐标
+          radius: 35,  //半径
+          data: [
+            {name: 'XX', value: 52},
+            {name: 'YY', value: 54},
+            {name: 'ZZ', value: 42}
+          ]
+        },
+        {
+          type: 'line', //折线图
+          data: [34, 28, 45, 69, 39, 43, 33, 23, 23, 33, 39, 22]
+        },
+        {
+          type: 'bar',  //柱状图
+          data: [20, 14, 32, 46, 24, 23, 23, 13, 16, 20, 24, 15]
+        }
+      ]
+    }
+
+    myChart.setOption(option)
   </script>
 </body> 
 </html>
