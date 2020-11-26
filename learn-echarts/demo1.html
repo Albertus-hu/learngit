@@ -8,10 +8,14 @@
   <script src="./js/echarts.min.js"></script>
 </head>
 <body>
+  <!-- 为ECharts 准备一个具备大小（宽高）的DOM -->
   <div id="main" style="width: 600px; height: 400px;"></div>
+
   <script>
+    // 初始化ECharts实例
     const myChart = echarts.init(document.getElementById("main"));
     
+    // 指定图表的配置项和数据
     let option = {
       title: {
         text: 'ECharts 入门示例'
@@ -32,6 +36,9 @@
         }
       ]
     }
+
+    // 使用指定的配置项和数据 显示图表
+    myChart.setOption(option);
   </script>
 </body>
 </html>
